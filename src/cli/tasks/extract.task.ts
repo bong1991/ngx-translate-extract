@@ -123,7 +123,7 @@ export class ExtractTask implements TaskInterface {
 				mkdirp.sync(dir);
 				this._out(chalk.dim('- created dir: %s'), dir);
 			}
-			fs.writeFileSync(outputPath, this._compiler.compile(processedCollection));
+			fs.writeFileSync(outputPath, this._compiler.compile(processedCollection) + '\n');
 
 			this._out(chalk.green('Done!'));
 		});
